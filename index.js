@@ -75,20 +75,23 @@ intervals.stopAllTimers();
     <button id='start'>Start</button>
     <button id='reset'>Reset</button>
 </div> */
+const container = document.createElement('div');
 
 const digits = document.querySelector('.digits');
 let newDigits = digits;
 digits.remove();
+container.appendChild(newDigits);
 
 const startBtn = document.createElement('button');
 startBtn.textContent = 'Start';
+startBtn.style.width = '50%'
 const resetBtn = document.createElement('button');
 resetBtn.textContent = 'reset';
-container.appendChild(startBtn);
-container.appendChild(resetBtn);
-
-const container = document.createElement('div');
-container.appendChild(newDigits);
+resetBtn.style.width = '50%'
+const innerdiv = document.createElement('div');
+innerdiv.appendChild(startBtn);
+innerdiv.appendChild(resetBtn);
+container.appendChild(innerdiv)
 container.style.display = 'flex';
 container.style.flexDirection = 'column ';
 document.querySelector('body').appendChild(container);
